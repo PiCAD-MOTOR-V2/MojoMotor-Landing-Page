@@ -351,10 +351,10 @@ background: transparent; /* Set background to transparent */
 
 .Vectorbackground3{
     position: absolute;
-    bottom:20%;
-    left: -30%;
-    width: 50%;
-    height: 50%;
+    bottom:32%;
+    left: -8%;
+    width: 20%;
+    height: 20%;
     z-index: -1; /* Ensure it stays behind the content */
 }
 
@@ -434,11 +434,14 @@ background: transparent; /* Set background to transparent */
 
 .ovcard-text h3{
     margin-top: -45px;
+    margin-right: 440px;
+    /* text-align: right; */
 }
 
   
   .Tailored-container img {
     display: block;
+    margin-top: -15px;
   }
   
   .Tailored {
@@ -457,7 +460,7 @@ background: transparent; /* Set background to transparent */
     position: relative;
     top: 50%; /* Adjust this value to move the text vertically */
     left: 60%; /* Adjust this value to move the text horizontally */
-    transform: translate(-50%, -110%); /* Center the text */
+    transform: translate(-50%, -120%); /* Center the text */
     color: white; /* Text color */
     font-size: 28px; /* Adjust text size */
     font-weight: bold; /* Make text bold */
@@ -532,17 +535,21 @@ footer p {
 .move-right {
     position: relative; /* Allows for positioning adjustments */
     left: 380px; /* Move the element 20 pixels to the right */
+    text-align: right;
+    margin-top: 8px !important;
 }
 
 .move-right-vector{
     position: relative; /* Allows for positioning adjustments */
-    left: 250px
-    ; /* Move the element 20 pixels to the right */
+    left: 250px;
+    margin-top: -8px;
 }
 
 .move-right-para{
     position: relative !important; /* Allows for positioning adjustments */
     left: 110px !important;
+    text-align: right !important;
+    /* margin-top: 20px; */
 }
 
 .move-right2{
