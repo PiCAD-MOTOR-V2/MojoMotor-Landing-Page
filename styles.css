@@ -154,11 +154,15 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 190px;
     height: 100vh;
     padding-bottom: 100px;
 }
 
+.hero-image img{
+    width: 100%;
+    height: 100%;
+}
 
 
 .hero-content {
@@ -373,7 +377,7 @@ background: transparent; /* Set background to transparent */
 .ovsection-title {
     text-align: left;
     font-size: 2.5rem;
-    margin-top: 138px;
+    margin-top: 156px;
     margin-bottom: 40px;
     margin-left: 198px;
     color: #007ad9;
@@ -431,19 +435,52 @@ background: transparent; /* Set background to transparent */
     display: inline-block;
 }
 
+.Tailored-container2 {
+    position: relative;
+    display: inline-block;
+    margin-top: 100px;
+    margin-bottom: -20px;
+}
 
+.Tailored-container2 h3{
+    margin-top: -65px;
+    margin-right: 440px; 
+}
 .ovcard-text h3{
     margin-top: -45px;
     margin-right: 440px;
     /* text-align: right; */
+    
 }
 
+/* .ovcard-text-1 h3{
+    margin-top: -65px;
+    margin-right: 440px;
+   
+} */
+
+.ovcard-text-1 p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: 70% !important;
+    text-align: justify;
+    left: 55px;
+    position: relative;
+    /* z-index: -1; */
+    margin-top: 60px;
+}
   
   .Tailored-container img {
     display: block;
     margin-top: -15px;
   }
   
+  .Tailored-container2 img {
+    display: block;
+    margin-top: -15px;
+    margin-left: -20px;
+  }
+
   .Tailored {
     position: relative;
     top: 50%; /* Adjust this value to move the text vertically */
@@ -468,6 +505,37 @@ background: transparent; /* Set background to transparent */
     padding: 5px; /* Optional: Padding around the text */
   }
 
+  .Tailored3{
+    position: relative;
+    top: 50%; /* Adjust this value to move the text vertically */
+    left: 38%; /* Adjust this value to move the text horizontally */
+    transform: translate(-50%, -120%); /* Center the text */
+    color: white; /* Text color */
+    font-size: 28px; /* Adjust text size */
+    font-weight: bold; /* Make text bold */
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+    padding: 5px; /* Optional: Padding around the text */
+    margin-left: 96px ;
+    margin-top: 8px;
+  }
+
+  .Tailored4 {
+    position: relative;
+    top: 50%; /* Adjust this value to move the text vertically */
+    left: 60%; /* Adjust this value to move the text horizontally */
+    transform: translate(-52%, -110%); /* Center the text */
+    color: white; /* Text color */
+    font-size: 32px; /* Adjust text size */
+    font-weight: bold; /* Make text bold */
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+    padding: 5px; /* Optional: Padding around the text */
+  }
+
+  .ovcard-image-1 img{
+    width: 1600px !important;
+    height: 600px !important;
+    /* z-index: 1; */
+}
 
 .ovcard p {
     font-size: 20px;
@@ -553,16 +621,22 @@ footer p {
 }
 
 .move-right2{
-    position: relative; /* Allows for positioning adjustments */
-    left: 50px; 
+    position: relative !important; /* Allows for positioning adjustments */
+    left: 200px !important; 
+    text-align: right !important;
+    margin-top: -68px !important;
 }
 
 .move-right-vector2{
     position: relative; /* Allows for positioning adjustments */
     left: 150px;
+    margin-top: -60px;
 }
 
 .move-right-para2{
     position: relative !important; /* Allows for positioning adjustments */
     left: 70px !important;
+    text-align: right !important;
+    margin-bottom: -170px !important;
+    padding-top: 40px;
 }
