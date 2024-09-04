@@ -190,7 +190,7 @@ body {
     color: #67EE67;
 }
 
-.cta-button {
+/* .cta-button {
     background: #009400;
     color: white;
     padding: 10px 30px;
@@ -200,8 +200,43 @@ body {
     margin-top: 55px;
     font-size: 20px;
     font-weight: 500;
-    font-family: 'Poppins', sans-serif; /* Ensure font is applied here too */
+    font-family: 'Poppins', sans-serif;
+} */
+
+.cta-button {
+    padding: 10px 30px; /* Original padding */
+    background: #009400; /* Original background color */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Original border-radius */
+    cursor: pointer;
+    margin-top: 55px; /* Original margin-top */
+    font-size: 20px; /* Original font-size */
+    font-weight: 500; /* Original font-weight */
+    font-family: 'Poppins', sans-serif; /* Original font-family */
+    transition: background-color 0.3s ease;
+    animation: pulse 1.5s infinite;
 }
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 #007AD980; /* Adjusted color to match original background */
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px #007AD980; /* Adjusted color to match original background */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 #007AD980; /* Adjusted color to match original background */
+    }
+}
+
 
 /* Carousel Section */
 /* Adjusting overflow and card visibility */
