@@ -94,25 +94,36 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif; /* Ensure font is applied here too */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+    border-radius: 45px !important;
+    width: 100px;
+    height: 40px;
 }
 
 .sign-in {
     background: transparent;
     color: #007ad9;
-    border-radius: 45px !important;
-    width: 100px;
-    height: 40px;
     border: 1px solid #007ad9 !important;
-    
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .sign-up {
     background: #007AD9;
     color: white;
-    border-radius: 45px !important;
-    width: 100px;
-    height: 40px;
     margin-right: 10px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+}
+
+.sign-in:active,
+.sign-up:active {
+    transform: translateY(3px); /* Simulates the button being pressed down */
+    background-color: #005bb5; /* Darker shade on click for sign-up */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}
+
+.sign-in:active {
+    background-color: rgba(0, 123, 217, 0.1); /* Slight background color change on click */
+    color: #005bb5; /* Darker text color on click */
 }
 
 /* Hero Section */
@@ -189,19 +200,6 @@ body {
 .highlight {
     color: #67EE67;
 }
-
-/* .cta-button {
-    background: #009400;
-    color: white;
-    padding: 10px 30px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-top: 55px;
-    font-size: 20px;
-    font-weight: 500;
-    font-family: 'Poppins', sans-serif;
-} */
 
 .cta-button {
     padding: 10px 30px; /* Original padding */
@@ -566,6 +564,8 @@ background: transparent; /* Set background to transparent */
     padding: 5px; /* Optional: Padding around the text */
   }
 
+
+  
   .ovcard-image-1 img{
     width: 1600px !important;
     height: 600px !important;
