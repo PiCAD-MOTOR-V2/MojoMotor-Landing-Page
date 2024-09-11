@@ -1,6 +1,3 @@
-// Example: Smooth scrolling for anchor links
-
-
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -72,147 +69,52 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   new Splide(".splide", {
-//     type: "loop",
-//     perPage: 4,
-//     arrows: false,
-//     pagination: false,
-//     focus: "center",
-//     gap: "1em"
-//   }).mount(window.splide.Extensions);
-// });
-// document.addEventListener("DOMContentLoaded", function() {
-//   const carousel = document.querySelector(".carousel");
-//   const arrowBtns = document.querySelectorAll(".wrapper i");
-//   const wrapper = document.querySelector(".wrapper");
 
-//   const firstCard = carousel.querySelector(".card");
-//   const firstCardWidth = firstCard.offsetWidth;
-//   const totalCardWidth = carousel.scrollWidth;
-//   const maxScrollLeft = totalCardWidth - carousel.offsetWidth;
-
-//   let isDragging = false,
-//       startX,
-//       startScrollLeft,
-//       timeoutId;
-
-//   const dragStart = (e) => {
-//       isDragging = true;
-//       carousel.classList.add("dragging");
-//       startX = e.pageX;
-//       startScrollLeft = carousel.scrollLeft;
-//   };
-
-//   const dragging = (e) => {
-//       if (!isDragging) return;
-
-//       const newScrollLeft = startScrollLeft - (e.pageX - startX);
-
-//       if (newScrollLeft <= 0 || newScrollLeft >= maxScrollLeft) {
-//           isDragging = false;
-//           return;
-//       }
-
-//       carousel.scrollLeft = newScrollLeft;
-//   };
-
-//   const dragStop = () => {
-//       isDragging = false; 
-//       carousel.classList.remove("dragging");
-//   };
-
-//   const autoPlay = () => {
-//       // Return if window is smaller than 800
-//       if (window.innerWidth < 800) return; 
-      
-//       // If the carousel is at the end, reset scroll position
-//       if (carousel.scrollLeft >= maxScrollLeft) {
-//           carousel.scrollLeft = 0;
-//       }
-      
-//       // Scroll the carousel after every 3000ms
-//       timeoutId = setTimeout(() => {
-//           carousel.scrollLeft += firstCardWidth;
-//           // If we've scrolled past the end, reset to start
-//           if (carousel.scrollLeft >= maxScrollLeft) {
-//               carousel.scrollLeft = 0;
-//           }
-//           autoPlay(); // Restart autoplay
-//       }, 3000); // Adjusted to 3 seconds
-//   };
-
-//   carousel.addEventListener("mousedown", dragStart);
-//   carousel.addEventListener("mousemove", dragging);
-//   document.addEventListener("mouseup", dragStop);
-//   wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
-//   wrapper.addEventListener("mouseleave", autoPlay);
-
-//   arrowBtns.forEach(btn => {
-//       btn.addEventListener("click", () => {
-//           carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
-//           // Stop autoplay when arrow is clicked
-//           clearTimeout(timeoutId);
-//       });
-//   });
-
-//   autoPlay(); // Start autoplay when DOM is loaded
-// });
-const wrapper = document.querySelector('.wrapper');
-const carousel = document.querySelector('.carousel');
-const cards = document.querySelectorAll('.cacard');
-const totalCards = cards.length;
+let autoSlide;
+const radios = document.querySelectorAll('input[type=radio]');
 let currentIndex = 0;
 
-// Clone the first few cards to create a seamless loop
-cards.forEach(card => {
-    const clone = card.cloneNode(true);
-    carousel.appendChild(clone);
-});
 
-const scrollSpeed = 2000; // Time between auto-scrolls in milliseconds
+// Expand card to full screen on click
+// const cacards = document.querySelectorAll('.cacard');
 
-function autoScroll() {
-    currentIndex++;
-    carousel.scrollTo({
-        left: currentIndex * cards[0].offsetWidth,
-        behavior: 'smooth'
-    });
+// const cacontainer = document.getElementById('cacontainer');
 
-    // Reset to the original start (without user noticing)
-    if (currentIndex >= totalCards) {
-        setTimeout(() => {
-            carousel.scrollTo({
-                left: 0,
-                behavior: 'auto' // Instantly reset to the original start
-            });
-            currentIndex = 0;
-        }, 100); // Minimal delay for resetting to start
-    }
+// console.log(cacontainer);
+// cacards.forEach((cacard, index) => {
+//   cacard.addEventListener('click', () => {
+//     // Add the active class to expand the clicked card
+//     cacard.classList.add('active');
+
+    
+//     // Create the close button
+//     const closeButton = document.createElement('button');
+//     closeButton.textContent = 'X';
+//     closeButton.classList.add('close-btn');
+    
+//     // Append the close button to the card
+//     cacard.appendChild(closeButton);
+    
+//     // Stop auto-transition when a card is clicked
+//     clearInterval(autoSlide);
+    
+//     // Close the card on button click
+//     closeButton.addEventListener('click', () => {
+//         console.log(cacard.className);
+//       cacard.classList.remove('active');
+//       console.log(cacard.classList);
+//       closeButton.remove();
+//       startAutoSlide();
+//     });
+//   });
+// });
+
+// Restart auto slide after closing the card
+function startAutoSlide() {
+  autoSlide = setInterval(() => {
+    radios[currentIndex].checked = true;
+    currentIndex = (currentIndex + 1) % radios.length;
+  }, 2500); // 3 seconds
 }
 
-let autoScrollInterval = setInterval(autoScroll, scrollSpeed);
-
-carousel.addEventListener('mouseover', () => {
-    clearInterval(autoScrollInterval);
-});
-
-carousel.addEventListener('mouseout', () => {
-    autoScrollInterval = setInterval(autoScroll, scrollSpeed);
-});
-
-document.getElementById('left').addEventListener('click', () => {
-    currentIndex = currentIndex > 0 ? currentIndex - 1 : totalCards - 1;
-    carousel.scrollTo({
-        left: currentIndex * cards[0].offsetWidth,
-        behavior: 'smooth'
-    });
-});
-
-document.getElementById('right').addEventListener('click', () => {
-    currentIndex = currentIndex < totalCards - 1 ? currentIndex + 1 : 0;
-    carousel.scrollTo({
-        left: currentIndex * cards[0].offsetWidth,
-        behavior: 'smooth'
-    });
-});
+startAutoSlide();
