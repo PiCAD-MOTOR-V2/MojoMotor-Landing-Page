@@ -676,7 +676,7 @@ footer {
 
 /* Footer Links */
 footer a {
-    color: #222222;
+    color: rgb(34, 34, 34);
     text-decoration: none;
     margin: 0 1vw;
 }
