@@ -209,8 +209,8 @@ body {
     margin-top: 5.5vh;
     font-size: clamp(17.06px,1.667vw, 30.94px);
     font-weight: 500;
-    transition: background-color 0.3s ease;
-    animation: pulse 1.5s infinite;
+    /* transition: background-color 0.3s ease;
+    animation: pulse 1.5s infinite; */
 }
 
 .cta-button:hover {
